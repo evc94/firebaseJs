@@ -15,6 +15,7 @@ form.submit(function(event){
         url: event.target.url.value,
         description: event.target.description.value
     });
+    $('#form-site')[0].reset();
 });
 
 function getData(){
