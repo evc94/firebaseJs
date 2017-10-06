@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de mis sitios favoritos</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container my-4">
+            <h1>Mis sitios favoritos</h1>
+            <p class="text-format text-muted">Aplicación web creada para VII Congreso de Estudiantes de Ingeniería 2017 <strong>Taller impartido por: Estuardo Vásquez</strong></p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Top</th>
+                                <th>Nombre</th>
+                                <th>Url</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </thead>
+                            <tbody>
+                                <td>1</td>
+                                <td>google</td>
+                                <td>google.com.gt</td>
+                                <td>Buscador</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="" class="btn btn-sm btn-warning">Editar</a>
+                                        <a href="" class="btn btn-sm btn-danger">Eliminar</a>
+                                    </div>
+                                </td>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-lg-4">
+                    <form class="" action="index.html" method="post">
+                        <div class="form-group">
+                            <label>Top</label>
+                            <input type="number" class="form-control" name="top" value="" placeholder="Número TOP del sitio" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" name="nombre" value="" placeholder="Nombre del sitio" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Url</label>
+                            <input type="text" class="form-control" name="url" value="" placeholder="URL del sitio" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control" name="url" value="" placeholder="Descripción del sitio">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" name="button">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="js/sitelist-firebase.js" charset="utf-8"></script>
+    </body>
+</html>
