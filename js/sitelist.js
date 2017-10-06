@@ -29,13 +29,25 @@ function getData(){
                     "<td> <a href=\""+allData[index].url+"\" target=\"_blank\">"+ allData[index].name+"</a></td>"+
                     "<td> "+ allData[index].description+"</td>"+
                     "<td> <div class=\"btn-group\">"+
-                    "<button onclick=\"deleteRow(\'"+index+"\')\" class=\"btn btn-sm btn-warning\">Editar</button>"+
+                    "<button onclick=\"getOne(\'"+index+"\')\" class=\"btn btn-sm btn-warning\">Editar</button>"+
                     "<button onclick=\"deleteRow(\'"+index+"\')\" class=\"btn btn-sm btn-danger\">Eliminar</button>"+
                     "</div> </td>"+
                     "</tr>";
         }
         formData.html(rows);
     })
+}
+
+function getOne(index){
+    getOneRow = refData.child(index);
+    getOneRow.once("value", function(snap){
+        var data = snap.val();
+        $("input[name='top']").val(data.top);
+        $("input[name='name']").val(data.name);
+        $("input[name='url']").val(data.url);
+        $("input[name='description']").val(data.description);
+        $("button[name='button']").val("editar");
+    });
 }
 
 function deleteRow(index){
