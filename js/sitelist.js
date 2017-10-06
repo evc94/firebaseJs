@@ -1,6 +1,7 @@
 var form = $('#form-site');
 var formData = $('#tbody-sites');
 var refData;
+
 $(document).ready(function(){
     refData = firebase.database().ref().child('sites');
     getData();
@@ -25,8 +26,7 @@ function getData(){
         for (var index in allData) {
             rows += "<tr>"+
                     "<td> "+ allData[index].top+"</td>"+
-                    "<td> "+ allData[index].name+"</td>"+
-                    "<td> "+ allData[index].url+"</td>"+
+                    "<td> <a href=\""+allData[index].url+"\" target=\"_blank\">"+ allData[index].name+"</a></td>"+
                     "<td> "+ allData[index].description+"</td>"+
                     "<td> <div class=\"btn-group\">"+
                     "<a href=\"\" class=\"btn btn-sm btn-warning\">Editar</a>"+
