@@ -8,6 +8,9 @@ $(document).ready(function(){
 form.submit(function(event){
     event.preventDefault();
     refData.push({
-        name: event.target.nombre.value
+        top: event.target.top.value,
+        name: event.target.name.value,
+        url: event.target.url.value,
+        description: event.target.description.value
     });
 });
