@@ -29,11 +29,16 @@ function getData(){
                     "<td> <a href=\""+allData[index].url+"\" target=\"_blank\">"+ allData[index].name+"</a></td>"+
                     "<td> "+ allData[index].description+"</td>"+
                     "<td> <div class=\"btn-group\">"+
-                    "<button href=\"\" class=\"btn btn-sm btn-warning\">Editar</button>"+
-                    "<button href=\"\" class=\"btn btn-sm btn-danger\">Eliminar</button>"+
+                    "<button onclick=\"deleteRow(\'"+index+"\')\" class=\"btn btn-sm btn-warning\">Editar</button>"+
+                    "<button onclick=\"deleteRow(\'"+index+"\')\" class=\"btn btn-sm btn-danger\">Eliminar</button>"+
                     "</div> </td>"+
                     "</tr>";
         }
         formData.html(rows);
     })
+}
+
+function deleteRow(index){
+    rowtoDelete = refData.child(index);
+    rowtoDelete.remove();
 }
