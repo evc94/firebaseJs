@@ -10,12 +10,24 @@ $(document).ready(function(){
 
 form.submit(function(event){
     event.preventDefault();
-    refData.push({
-        top: event.target.top.value,
-        name: event.target.name.value,
-        url: event.target.url.value,
-        description: event.target.description.value
-    });
+    if(event.target.button.value != "editar"){
+        refData.push({
+            top: event.target.top.value,
+            name: event.target.name.value,
+            url: event.target.url.value,
+            description: event.target.description.value
+        });
+    }else{
+        rowToUpdate = refData.child(event.target.index.value);
+        rowToUpdate.update({
+            top: event.target.top.value,
+            name: event.target.name.value,
+            url: event.target.url.value,
+            description: event.target.description.value
+        });
+        $("button[name='button']").val("");
+    }
+
     $('#form-site')[0].reset();
 });
 
@@ -42,6 +54,7 @@ function getOne(index){
     getOneRow = refData.child(index);
     getOneRow.once("value", function(snap){
         var data = snap.val();
+        $("input[name='index']").val(index);
         $("input[name='top']").val(data.top);
         $("input[name='name']").val(data.name);
         $("input[name='url']").val(data.url);
