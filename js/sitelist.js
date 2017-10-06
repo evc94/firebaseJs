@@ -29,8 +29,8 @@ function getData(){
                     "<td> <a href=\""+allData[index].url+"\" target=\"_blank\">"+ allData[index].name+"</a></td>"+
                     "<td> "+ allData[index].description+"</td>"+
                     "<td> <div class=\"btn-group\">"+
-                    "<a href=\"\" class=\"btn btn-sm btn-warning\">Editar</a>"+
-                    "<a href=\"\" class=\"btn btn-sm btn-danger\">Eliminar</a>"+
+                    "<button href=\"\" class=\"btn btn-sm btn-warning\">Editar</button>"+
+                    "<button href=\"\" class=\"btn btn-sm btn-danger\">Eliminar</button>"+
                     "</div> </td>"+
                     "</tr>";
         }
